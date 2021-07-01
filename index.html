@@ -1,77 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="styles/style.css">
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-  <main>
-    <!-- SCORECARD -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- SCORECARD -->
       <header id="score-container">
         <section id="score-section">
           <div>
-            <img id="logo" src="images/logo-bonus.svg">
+            <img id="logo" src="images/logo-bonus.svg" />
           </div>
           <div id="scoreCard">
             <h3>SCORE</h3>
             <span id="number"></span>
           </div>
         </section>
-    </header>
+      </header>
       <!-- OPTIONS -->
-    <section id="options-section">
-      <div id="options-div">
-        <div id="scissors" class="option-btn" style="border:1rem solid rgb(243, 166, 0);box-shadow: 0vw 0.25vw rgb(214, 121, 0);"><img class="rps" src="images/icon-scissors.svg"></div>
-        <div id="paper" class="option-btn" style="border:1rem solid rgb(0, 110, 255);box-shadow: 0vw 0.25vw rgb(0, 85, 197);"><img class="rps" src="images/icon-paper.svg"></div>
-        <div id="rock" class="option-btn" style="border:1rem solid rgb(253, 68, 68);box-shadow: 0vw 0.25vw rgb(192, 51, 51);"><img class="rps" src="images/icon-rock.svg"></div>
-        <div id="lizard" class="option-btn" style="border:1rem solid rgb(142, 84, 250);box-shadow: 0vw 0.25vw rgb(101, 60, 179);"><img  class="rps" src="images/icon-lizard.svg"></div>
-        <div id="spock" class="option-btn" style="border:1rem solid rgb(0, 192, 218);box-shadow: 0vw 0.25vw rgb(0, 150, 170);"><img class="rps" src="images/icon-spock.svg"></div>
-        <div id="pentagon-container"><img id="bgPentagon" src="images/bg-pentagon.svg"></div>
-      </div>
-      <div id="options-picked">
-        <div class="picked-container">
-          <h3>YOU PICKED</h3>
-          <div id="user-picked" class="picked"><img id="user-img" class="picked-img" src=""></div>
+      <section id="options-section">
+        <div id="options-div">
+          <div
+            id="scissors"
+            class="option-btn"
+            style="
+              border: 1rem solid rgb(243, 166, 0);
+              box-shadow: 0vw 0.25vw rgb(214, 121, 0);
+            "
+          >
+            <img class="rps" src="images/icon-scissors.svg" />
+          </div>
+          <div
+            id="paper"
+            class="option-btn"
+            style="
+              border: 1rem solid rgb(0, 110, 255);
+              box-shadow: 0vw 0.25vw rgb(0, 85, 197);
+            "
+          >
+            <img class="rps" src="images/icon-paper.svg" />
+          </div>
+          <div
+            id="rock"
+            class="option-btn"
+            style="
+              border: 1rem solid rgb(253, 68, 68);
+              box-shadow: 0vw 0.25vw rgb(192, 51, 51);
+            "
+          >
+            <img class="rps" src="images/icon-rock.svg" />
+          </div>
+          <div
+            id="lizard"
+            class="option-btn"
+            style="
+              border: 1rem solid rgb(142, 84, 250);
+              box-shadow: 0vw 0.25vw rgb(101, 60, 179);
+            "
+          >
+            <img class="rps" src="images/icon-lizard.svg" />
+          </div>
+          <div
+            id="spock"
+            class="option-btn"
+            style="
+              border: 1rem solid rgb(0, 192, 218);
+              box-shadow: 0vw 0.25vw rgb(0, 150, 170);
+            "
+          >
+            <img class="rps" src="images/icon-spock.svg" />
+          </div>
+          <!-- <div id="pentagon-container"> -->
+          <img id="bgPentagon" src="images/bg-pentagon.svg" />
+          <!-- </div> -->
         </div>
-        <div id="outcome-container" class="picked-container"><h2 id="outcome-text"></h2><button id="playAgain">PLAY AGAIN</button></div>
-        <div class="picked-container">
-          <h3>THE HOUSE PICKED</h3>
-          <div id="house-picked" class="picked"><img id="house-img" class="picked-img" src=""></div>
-        </div>
-      </div>
-      <button id="rules">RULES</button>
-    </section>
-          <!-- RULES MODAL-->
-          <div id="modal">
-            <div id="video-container">
-              <iframe id="videoPlayer" src="https://www.youtube.com/embed/x5Q6-wMx-K8?showinfo=0&rel=0&amp&loop=1&amp" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" controls allowfullscreen></iframe>
+        <div id="options-picked">
+          <div class="picked-container">
+            <h3>YOU PICKED</h3>
+            <div id="user-picked" class="picked">
+              <img id="user-img" class="picked-img" src="" />
             </div>
-            <div id="rules-details">
-              <div id="heading-div">
-                <h2 id="rules-heading">RULES</h2>
-              <div id="icon-div">
-                <!-- <img id="close-icon" src="images/icon-close.svg"> -->
-                <svg id="svgClose" xmlns="http://www.w3.org/2000/svg" width="20" height="20"><path id="close-icon" fill="#3B4262" fill-rule="evenodd" d="M16.97 0l2.122 2.121-7.425 7.425 7.425 7.425-2.121 2.12-7.425-7.424-7.425 7.425L0 16.97l7.425-7.425L0 2.121 2.121 0l7.425 7.425L16.971 0z" opacity=".25"/></svg>
-              </div>
+          </div>
+          <div id="outcome-container" class="picked-container">
+            <h2 id="outcome-text"></h2>
+            <button id="playAgain">PLAY AGAIN</button>
+          </div>
+          <div class="picked-container">
+            <h3>THE HOUSE PICKED</h3>
+            <div id="house-picked" class="picked">
+              <img id="house-img" class="picked-img" src="" />
             </div>
-            <h2 id="video-title">Watch Video</h2>
-              <img id="rules-img" src="images/image-rules-bonus.svg">
           </div>
         </div>
-    <div class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="www.getdaniel.me/portfolio">Daniel Babin</a>.
-    </div>
-  </main>
-  <script src="scripts/script.js"></script>
-</body>
+        <button id="rules">RULES</button>
+      </section>
+      <!-- RULES MODAL-->
+      <div id="modal">
+        <div id="video-container">
+          <iframe
+            id="videoPlayer"
+            src="https://www.youtube.com/embed/x5Q6-wMx-K8?showinfo=0&rel=0&amp&loop=1&amp"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+            controls
+            allowfullscreen
+          ></iframe>
+        </div>
+        <div id="rules-details">
+          <div id="heading-div">
+            <h2 id="rules-heading">RULES</h2>
+            <div id="icon-div">
+              <!-- <img id="close-icon" src="images/icon-close.svg"> -->
+              <svg
+                id="svgClose"
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+              >
+                <path
+                  id="close-icon"
+                  fill="#3B4262"
+                  fill-rule="evenodd"
+                  d="M16.97 0l2.122 2.121-7.425 7.425 7.425 7.425-2.121 2.12-7.425-7.424-7.425 7.425L0 16.97l7.425-7.425L0 2.121 2.121 0l7.425 7.425L16.971 0z"
+                  opacity=".25"
+                />
+              </svg>
+            </div>
+          </div>
+          <h2 id="video-title">Watch Video</h2>
+          <img id="rules-img" src="images/image-rules-bonus.svg" />
+        </div>
+      </div>
+      <div class="attribution">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH"
+          target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="www.getdaniel.me/portfolio">Daniel Babin</a>.
+      </div>
+    </main>
+    <script src="scripts/script.js"></script>
+  </body>
 </html>
