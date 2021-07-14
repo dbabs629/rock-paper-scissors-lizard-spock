@@ -90,9 +90,6 @@ for (let i = 0; i < options.length; i++) {
     outcomeText.appendChild(h2Text);
     outcomeContainer.style.display = "flex";
     optionSection.style.maxWidth = "55%";
-    // optionSection.style.maxWidth = "55%";
-    // optionSection.style.marginTop = "1vw";
-    // console.log(currentScore);
   });
 }
 againBtn.addEventListener("click", () => {
@@ -101,7 +98,6 @@ againBtn.addEventListener("click", () => {
   optionDiv.style.display = "flex";
   outcomeText.innerHTML = " ";
   optionSection.style.maxWidth = "50vmin";
-  //   optionSection.style.marginTop = "7vw";
 });
 
 rules.addEventListener("click", () => (modal.style.display = "block"));
