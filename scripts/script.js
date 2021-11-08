@@ -89,7 +89,7 @@ for (let i = 0; i < options.length; i++) {
     h2Text = document.createTextNode(outcome);
     outcomeText.appendChild(h2Text);
     outcomeContainer.style.display = "flex";
-    optionSection.style.maxWidth = "55%";
+    optionSection.style.maxWidth = "60%";
   });
 }
 againBtn.addEventListener("click", () => {
